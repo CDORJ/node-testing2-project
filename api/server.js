@@ -9,7 +9,7 @@ server.use(cors(), express.json(), helmet());
 server.use("/api/pastas", pastaRouter);
 
 server.get("/", (req, res, next) => {
-  res.status(200).json({ message: "api up" });
+  res.status(200).json({ api: "up" });
 });
 
 server.use((error, req, res, next) => {
