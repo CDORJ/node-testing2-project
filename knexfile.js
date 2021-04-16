@@ -12,7 +12,7 @@ module.exports = {
       directory: "./data/seeds",
     },
     connection: {
-      filename: "./data.pasta.db3",
+      filename: "./data/pasta.db3",
     },
     pool: {
       afterCreate: (conn, done) => {
