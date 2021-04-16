@@ -8,13 +8,6 @@ exports.up = function (knex) {
       tbl.increments("user_id");
       tbl.string("username", 128).notNullable().unique();
       tbl.string("password", 128).notNullable();
-      tbl
-        .integer("pasta_id")
-        .unsigned()
-        .notNullable()
-        .references("pastas.pasta_id")
-        .onUpdate("RESTRICT")
-        .onDelete("RESTRICT");
     });
 };
 

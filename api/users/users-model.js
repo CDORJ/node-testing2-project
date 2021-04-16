@@ -8,18 +8,20 @@ module.exports = {
 };
 
 function getUser() {
-  return db("users");
+  return db("users")
+    .select("user_id", "username", "password")
+    .orderBy("user_id");
 }
 
 function getUserById(id) {
-  return db("users").where({ id }).first();
+  return db("users").where({ user_id: id }).first();
 }
 
 function getUserBy(filter) {
-  return db("users").where(filter);
+  return db("users").where(filter).orderBy("users_id");
 }
 
 async function registerUser(user) {
-  const [id] = await db("users").insert(user);
+  const [id] = await db("users").insert(user, "user_id");
   return getUserById(id);
 }
