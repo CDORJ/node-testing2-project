@@ -14,7 +14,7 @@ async function insert(pasta) {
 }
 
 function remove(id) {
-  return db("pastas").remove(id);
+  return db("pastas").delete(id);
 }
 
 module.exports = {
