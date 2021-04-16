@@ -2,10 +2,12 @@ const express = require("express");
 const helmet = require("helmet");
 const cors = require("cors");
 const pastaRouter = require("./pastas/pasta-router.js");
+const userRouter = require("./users/users-router.js");
 
 const server = express();
 
 server.use(cors(), express.json(), helmet());
+server.use("/api/users", userRouter);
 server.use("/api/pastas", pastaRouter);
 
 server.get("/", (req, res, next) => {
