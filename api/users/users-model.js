@@ -18,7 +18,7 @@ function getUserById(id) {
 }
 
 function getUserBy(filter) {
-  return db("users").where(filter).orderBy("users_id");
+  return db("users").where(filter).orderBy("user_id");
 }
 
 async function registerUser(user) {
